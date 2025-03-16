@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pick n' Pay</title>
+    <style>
+
+        body, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F0BB78;
+        }
+
+        /* About Us Section */
+        .about-us {
+            margin-top: 80px;
+            padding: 50px 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+        .about-us h1 {
+            font-size: 2.5rem;
+            color: var(--card-title-color);
+            margin-bottom: 20px;
+        }
+        .about-us p {
+            font-size: 1.2rem;
+            color: var(--navbar-bg);
+            margin-bottom: 30px;
+            animation: slideIn 1.5s ease;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s, box-shadow 0.5s;
+            animation: zoomIn 1.5s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <!-- About Us Section -->
+    <section class="about-us">
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="static/MYPHOTO.jpeg" alt="Photo 1">
+            <img src="static/MyPHOTO2.jpeg" alt="Photo 2">
+        </div>
+    
+
+        <div class="container d-flex">
+                <h3 class="m-3" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Developer</h3>
+                <p class="m-3" style="font-weight:bolder;text-decoration: underline;">Darshit J. Ahir</p>
+                <p class="m-3" style="font-weight:bolder;">D5 :  23002171310007</p>
+                <p class="m-3" style="font-weight:bolder;text-transform: capitalize;">For any function related query contact : 7862071269 </p>
+                <p class="m-3" style="font-weight:bolder;">Reach Me At: djahir167@gmail.com</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

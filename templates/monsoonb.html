@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick n' Pay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+
+        /* General Reset */
+        body, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #543A14;
+            position: fixed !important;
+            top:0;
+            left: 0;
+            width:100%;
+            z-index:999;
+        }
+
+        .navbar-brand img {
+            height: 75px;
+            width: 75px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #FFF0DC;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #D59C58;
+        }
+
+        #navele h5 {
+            margin-left: 47px;
+            font-size: 1rem;
+            color: #FFF0DC;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+
+        #navele h5:hover {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        body {
+            background-color: #F0BB78;
+        }
+
+        /* Card Styles */
+        .card-container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            gap: 20px;
+        }
+
+        #carda2 {
+            border-radius: 47px;
+            transition: transform 0.3s ease, border-radius 0.3s ease;
+            overflow: hidden; /* Prevents image overflow */
+        }
+
+        #carda2:hover {
+            border-radius: 74px;
+            transform: scale(1.1);
+        }
+
+        .card-body h4 {
+            color: #543A14;
+        }
+
+        /* Image Transition */
+        .card img {
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
+
+        /* Prevent horizontal overflow */
+        * {
+            overflow-x: hidden;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img class="rounded-pill" src="{{ url_for('static', filename='Indi Logo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a id="navele" class="nav-link" href="{{ url_for('home') }}" ><h5 style="font-size: larger;text-decoration:underline;"  >Home</h5></a></li>
+                    <li class="nav-item"><a id="navele" class="nav-link" href="{{ url_for('contactUs') }}"><h5>Contact US</h5></a></li>
+                    <li class="nav-item"><a id="navele" class="nav-link" href="{{ url_for('login') }}"><h5>Log In</h5></a></li>
+                    <li class="nav-item">
+                        <a id="navele" class="nav-link" href="cart.html"><h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg></h5></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div style="margin-top:50px;"></div>
+    
+    
+    <div style="height: 100vh;width:100vw;margin-left:50px;" class="d-flex">
+        <div class="card-container2" id="cardContainer2" style="overflow-x: hidden;width:1000px;">
+            
+            <div id="carda2" class="card">
+                <a id="winsummon" style="text-decoration: none;" href="{{url_for('umbrella')}}">
+                    <img style="height: 325px; width: 275px; margin-left: 47px; margin-top: 47px; margin-right: 50px;" src="static/custumbr.jpeg" class="card-img-top" alt="shirts">
+                    <div class="card-body">
+                        <h4 style="margin-left: 30px; margin-top: 25px; color: #543A14;" class="card-title">
+                            <p style="margin-left: 12px; margin-right: 12px;">Designer Umbrellas</p>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+
+            <div id="carda2" class="card" style="margin-left: 47px;">
+                <a id="winsummon" style="text-decoration: none;" href="{{url_for('cmonsoon')}}">
+                    <img style="height: 325px; width: 275px; margin-left: 50px; margin-top: 47px; margin-right: 50px;" src="static/cmonsoon.jpeg" class="card-img-top" alt="pants">
+                    <div class="card-body">
+                        <h4 style="margin-left: 30px; margin-top: 25px; color: #543A14;" class="card-title">
+                            <p style="margin-left: 12px; margin-right: 12px;">Children's Monsoon Outfits</p>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Third Group of Cards (Side by Side) -->
+    <div style="height: 100vh;width:100vw;margin-top:-150px;margin-left:350px;" class="d-flex">
+        <div class="card-container2" style="overflow-x: hidden; margin-top: 0px;width:1000px;">
+
+            <div id="carda2" class="card">
+                <a id="winsummon" style="text-decoration: none;" href="{{url_for('menmonsoon')}}">
+                    <img style="height: 325px; width: 275px; margin-left: 50px; margin-top: 47px; margin-right: 50px;" src="static/mmonsoon.jpeg" class="card-img-top" alt="shoes">
+                    <div class="card-body">
+                        <h4 style="margin-left: 30px; margin-top: 25px; color: #543A14;" class="card-title">
+                            <p style="margin-left: 12px; margin-right: 12px;">Men's Monsoon Outfits</p>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+
+            <div id="carda2" class="card" style="margin-left: 47px;">
+                <a id="winsummon" style="text-decoration: none;" href="{{url_for('womenmonsoon')}}">
+                    <img style="height: 325px; width: 275px; margin-left: 50px; margin-top: 47px; margin-right: 50px;" src="static/wmonsoon.jpeg" class="card-img-top" alt="co-ords">
+                    <div class="card-body">
+                        <h4 style="margin-left: 30px; margin-top: 25px; color: #543A14;" class="card-title">
+                            <p style="margin-left: 12px;">Women's Monsoon Outfits</p>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
